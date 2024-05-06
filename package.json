@@ -2,10 +2,11 @@
   "name": "revise-static-content",
   "version": "0.0.1",
   "description": "Utility for updating static documentation in a repository.",
+  "license": "MIT",
   "type": "module",
   "module": "build/index.js",
   "types": "build/index.d.ts",
-  "license": "MIT",
+  "bin": "build/bin.js",
   "files": [
     "build"
   ],
