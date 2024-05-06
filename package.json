@@ -1,6 +1,6 @@
 {
   "name": "revise-static-content",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Utility for updating static documentation in a repository.",
   "type": "module",
   "module": "build/index.js",
