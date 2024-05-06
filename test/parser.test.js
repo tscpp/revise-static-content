@@ -7,8 +7,8 @@ describe("parser", () => {
     const document = parse("<!-- @foo: bar --><!-- /foo -->");
     assert(
       document.elements.some(
-        (element) => element.name === "foo" && element.param == "bar"
-      )
+        (element) => element.name === "foo" && element.param == "bar",
+      ),
     );
   });
 
@@ -16,8 +16,8 @@ describe("parser", () => {
     const document = parse("<!-- @foo bar --><!-- /foo -->");
     assert(
       document.elements.some(
-        (element) => element.name === "foo" && element.param == "bar"
-      )
+        (element) => element.name === "foo" && element.param == "bar",
+      ),
     );
   });
 
@@ -31,5 +31,9 @@ describe("parser", () => {
     assert.throws(() => {
       parse("<!-- @foo bar --><!-- /baz -->");
     });
+  });
+
+  test("ignores irrelevant end tags", () => {
+    parse("<!-- @foo: bar --><!-- /ko --><!-- /foo -->");
   });
 });

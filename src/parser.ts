@@ -17,15 +17,15 @@ export function parse(content: string): Document {
     execAll(/<!--\s*@([^:\s]+):?\s*(.+?)\s*-->/g, content)
   );
   const endTags = Array.from(execAll(/<!--\s*\/([^:\s]+)\s*-->/g, content));
-  if (startTags.length !== endTags.length) {
-    throw new Error(`Unbalanced directive tags.`);
-  }
   const elements = startTags
-    .map((startTag, i) => [startTag, endTags[i]!] as const)
-    .map(([startTag, endTag]): DirectiveElement => {
-      if (startTag[1]! !== endTag[1]!) {
-        throw new Error(`Unbalanced directive tags.`);
-      }
+    .map((startTag): DirectiveElement => {
+      do {
+        var endTag = endTags.shift();
+
+        if (!endTag) {
+          throw new Error(`Unbalanced directive tags.`);
+        }
+      } while (startTag[1]! !== endTag[1]!)
 
       return {
         name: startTag[1]!,
