@@ -11,7 +11,7 @@ const include: Directive = {
       : join(options.cwd, specifier);
     const template = readFileSync(path, "utf8");
     let part = renderTemplate(template, options.values);
-    part = "\n" + part.trim() + "\n";
+    part = "\n\n" + part.trim() + "\n\n";
     if (element.end - element.start === 0) {
       content.appendLeft(element.start, part);
     } else {
