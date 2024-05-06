@@ -2,6 +2,7 @@
   "name": "revise-static-content",
   "version": "0.0.2",
   "description": "Utility for updating static documentation in a repository.",
+  "repository": "tscpp/revise-static-content",
   "license": "MIT",
   "type": "module",
   "module": "build/index.js",
