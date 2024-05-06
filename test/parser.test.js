@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 
 describe("parser", () => {
   test("directive with colon", () => {
-    const document = parse("<!-- #foo: bar --><!-- /foo -->");
+    const document = parse("<!-- @foo: bar --><!-- /foo -->");
     assert(
       document.elements.some(
         (element) => element.name === "foo" && element.param == "bar"
@@ -13,7 +13,7 @@ describe("parser", () => {
   });
 
   test("directive without colon", () => {
-    const document = parse("<!-- #foo bar --><!-- /foo -->");
+    const document = parse("<!-- @foo bar --><!-- /foo -->");
     assert(
       document.elements.some(
         (element) => element.name === "foo" && element.param == "bar"
@@ -23,13 +23,13 @@ describe("parser", () => {
 
   test("fails on unbalanced elements", () => {
     assert.throws(() => {
-      parse("<!-- #foo bar --><!-- #foo bar --><!-- /foo -->");
+      parse("<!-- @foo bar --><!-- @foo bar --><!-- /foo -->");
     });
   });
 
   test("fails on non-matching element start/end name", () => {
     assert.throws(() => {
-      parse("<!-- #foo bar --><!-- /baz -->");
+      parse("<!-- @foo bar --><!-- /baz -->");
     });
   });
 });

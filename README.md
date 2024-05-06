@@ -36,7 +36,7 @@ This directive allows for the inclusion of content (parts) from other markdown f
 
 <!-- prettier-ignore -->
 ```html
-<!-- #include: docs/parts/intro.md -->
+<!-- @include: docs/parts/intro.md -->
 This code is automatically generated and should be edited elsewhere.
 <!-- /include -->
 ```
@@ -47,7 +47,7 @@ Inserts a [template](#template) specified inline in the directive paramater.
 
 <!-- prettier-ignore -->
 ```html
-<!-- #insert: Hello {{name}}! -->
+<!-- @insert: Hello {{name}}! -->
 Hello John!
 <!-- /insert -->
 ```
