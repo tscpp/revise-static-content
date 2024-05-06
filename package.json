@@ -1,0 +1,32 @@
+{
+  "name": "revise-static-content",
+  "version": "0.0.0",
+  "description": "Utility for updating static documentation in a repository.",
+  "type": "module",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "release": "np",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "globby": "^14.0.1",
+    "js-yaml": "^4.1.0",
+    "magic-string": "~0.30.10",
+    "meow": "^13.2.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^18.2.4",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.12.8",
+    "np": "^10.0.5",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  }
+}

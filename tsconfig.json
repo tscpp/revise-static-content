@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@tsconfig/strictest/tsconfig.json",
+    "@tsconfig/node18/tsconfig.json"
+  ],
+  "compilerOptions": {
+    "types": ["node"],
+    "declaration": true,
+    "outDir": "build"
+  },
+  "include": ["src"]
+}
