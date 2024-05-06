@@ -33,7 +33,7 @@ for (const file of files) {
   content = render(content, {
     cwd: cli.flags.cwd,
     values: Object.fromEntries(
-      cli.flags.value?.map((flag) => flag.split(":", 2)) ?? []
+      cli.flags.value?.map((flag) => flag.split(":", 2)) ?? [],
     ),
   });
 

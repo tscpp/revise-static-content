@@ -5,14 +5,14 @@ import assert from "node:assert/strict";
 describe("include directive", () => {
   test("render static content", () => {
     const rendered = render(
-      "<!-- @include: test/samples/part.md --><!-- /include -->"
+      "<!-- @include: test/samples/part.md --><!-- /include -->",
     );
     assert(rendered.includes("dynamic part"));
   });
 
   test("overrides existing content", () => {
     const rendered = render(
-      "<!-- @include: test/samples/part.md -->existing content<!-- /include -->"
+      "<!-- @include: test/samples/part.md -->existing content<!-- /include -->",
     );
     assert(!rendered.includes("existing content"));
   });
@@ -24,7 +24,7 @@ describe("include directive", () => {
         values: {
           name: "John",
         },
-      }
+      },
     );
     assert(rendered.includes("Hello John!"));
   });
@@ -36,7 +36,7 @@ describe("include directive", () => {
         values: {
           name: "John",
         },
-      }
+      },
     );
     assert(rendered.includes("Hello John!"));
   });

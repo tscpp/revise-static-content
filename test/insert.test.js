@@ -10,7 +10,7 @@ describe("insert directive", () => {
 
   test("overrides existing content", () => {
     const rendered = render(
-      "<!-- @insert: dynamic part -->existing content<!-- /insert -->"
+      "<!-- @insert: dynamic part -->existing content<!-- /insert -->",
     );
     assert(!rendered.includes("existing content"));
   });
@@ -22,7 +22,7 @@ describe("insert directive", () => {
         values: {
           name: "John",
         },
-      }
+      },
     );
     assert(rendered.includes("Hello John!"));
   });
@@ -34,7 +34,7 @@ describe("insert directive", () => {
         values: {
           name: "John",
         },
-      }
+      },
     );
     assert(rendered.includes("Hello John!"));
   });

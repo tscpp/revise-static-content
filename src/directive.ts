@@ -10,6 +10,6 @@ export interface Directive {
   render(
     content: MagicString,
     element: DirectiveElement,
-    options: DirectiveOptions
+    options: DirectiveOptions,
   ): void;
 }
