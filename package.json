@@ -1,6 +1,6 @@
 {
   "name": "revise-static-content",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Utility for updating static documentation in a repository.",
   "license": "MIT",
   "type": "module",
