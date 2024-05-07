@@ -21,6 +21,15 @@ describe("parser", () => {
     );
   });
 
+  test("directive without param", () => {
+    const document = parse("<!-- @foo --><!-- /foo -->");
+    assert(
+      document.elements.some(
+        (element) => element.name === "foo" && element.param == "",
+      ),
+    );
+  });
+
   test("fails on unbalanced elements", () => {
     assert.throws(() => {
       parse("<!-- @foo bar --><!-- @foo bar --><!-- /foo -->");

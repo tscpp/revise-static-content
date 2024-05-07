@@ -54,9 +54,20 @@ Hello John!
 
 ## Templates
 
-Templates are snippets of code whose ccontent can be overwritten. Templates can only be written in dynamic parts used by the [include directive](#include), or inline in the [insert directive](#insert). Templates allow you to insert values defined in the [frontmatter](https://jekyllrb.com/docs/front-matter/).
+Templates are snippets of code whose content can be overwritten. Templates can only be written in dynamic parts used by the [include directive](#include), or inline in the [insert directive](#insert). Templates allow you to insert values defined in the [frontmatter](https://jekyllrb.com/docs/front-matter/).
 
 <!-- prettier-ignore -->
 ```
 Hello {{name}}!
+```
+
+### Ignoring
+
+You can ignore rendering templates by wrapping the content in the ignore directive.
+
+<!-- prettier-ignore -->
+```html
+<!-- @ignore -->
+This is how you write mustache `{{name}}`!
+<!-- /ignore -->
 ```

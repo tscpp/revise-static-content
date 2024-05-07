@@ -14,7 +14,7 @@ export interface Document {
 
 export function parse(content: string): Document {
   const startTags = Array.from(
-    execAll(/<!--\s*@([^:\s]+):?\s*(.+?)\s*-->/g, content),
+    execAll(/<!--\s*@([^:\s]+):?\s*(.*?)\s*-->/g, content),
   );
   const endTags = Array.from(execAll(/<!--\s*\/([^:\s]+)\s*-->/g, content));
   const elements = startTags.map((startTag): DirectiveElement => {
