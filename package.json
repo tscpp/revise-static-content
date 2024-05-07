@@ -1,6 +1,6 @@
 {
   "name": "revise-static-content",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Utility for updating static documentation in a repository.",
   "repository": "tscpp/revise-static-content",
   "license": "MIT",
