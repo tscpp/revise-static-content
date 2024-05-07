@@ -3,6 +3,7 @@ export function renderTemplate(
   values: Readonly<Record<string, unknown>>,
 ): string {
   return template.replaceAll(/{{(.+?)}}/g, (_a, b) => {
+    b = b.trim();
     const value = values[b];
     if (value) {
       return String(value);
