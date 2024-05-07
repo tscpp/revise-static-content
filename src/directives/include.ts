@@ -5,7 +5,7 @@ import { renderTemplate } from "../template.js";
 
 const include: Directive = {
   render: (content, element, options) => {
-    const specifier = element.param;
+    const specifier = renderTemplate(element.param, options.values);
     const path = isAbsolute(specifier)
       ? specifier
       : join(options.cwd, specifier);
